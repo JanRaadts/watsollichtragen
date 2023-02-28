@@ -1,5 +1,5 @@
 .weather-container{
-    background-image: linear-gradient(rgba(238, 229, 149, 0.267), rgba(238, 229, 149, 0.267)), url("../../../assets/images/hand-drawn-seamless-pattern-related-weather-theme-sun-clouds-snowflakes-wind-rain-moon-lightning-doodle-sketch-vector-illustration-background-design_333145-414.jpg");
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), url("../../../assets/images/hand-drawn-seamless-pattern-related-weather-theme-sun-clouds-snowflakes-wind-rain-moon-lightning-doodle-sketch-vector-illustration-background-design_333145-414.jpg");
     height: 100svh;
   width: 100vw;
   display: flex;
@@ -8,17 +8,25 @@
 }
 
 .btn{
-    height: 30vh;
-    width: 30vh;
-    border: black solid 2px;
-    border-radius: 50%;
-    font-size: 2rem;
+    height: 20vh;
+    width: 40vh;
+    font-size: 2.5rem;
+    color: white;   
+    border: none;
+    background: #70DBC1;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .result-container{
     height: 100svh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

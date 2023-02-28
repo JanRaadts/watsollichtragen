@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class WeatherComponent {
 
   showWeather: boolean = true
+  loading: boolean = false
   data:any
   currentTemperatur: any = 0
   lat: number = 0
@@ -15,20 +16,11 @@ export class WeatherComponent {
   url!: string 
 
 
-// tarifa latitude=36.02&longitude=-5.61
-// Kiel latitude=54.32&longitude=10.13
-
   constructor(){}
 
   onClick(){
+    this.loading = true
     this.getLocation();
-    // this.fetchWeather();
-  }
-
-  fetchWeather(){
-    fetch(this.url)
-    .then((response) => response.json())
-    .then((quotesData) => {this.data = quotesData; this.getTemperature(); this.showWeather = !this.showWeather;} )
   }
 
   getLocation(){
@@ -48,6 +40,13 @@ export class WeatherComponent {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   
   }
+
+  fetchWeather(){
+    fetch(this.url)
+    .then((response) => response.json())
+    .then((quotesData) => {this.data = quotesData; this.getTemperature(); this.showWeather = !this.showWeather; this.loading = false} )
+  }
+
 
   getTemperature(){
     this.currentTemperatur = this.data.current_weather.temperature
