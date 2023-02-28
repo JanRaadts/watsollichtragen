@@ -1,0 +1,28 @@
+.weather-container{
+    background-image: linear-gradient(rgba(238, 229, 149, 0.267), rgba(238, 229, 149, 0.267)), url("../../../assets/images/hand-drawn-seamless-pattern-related-weather-theme-sun-clouds-snowflakes-wind-rain-moon-lightning-doodle-sketch-vector-illustration-background-design_333145-414.jpg");
+    height: 100svh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+    height: 30vh;
+    width: 30vh;
+    border: black solid 2px;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.result-container{
+    height: 100svh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature{
+    font-size: 3rem;
+}

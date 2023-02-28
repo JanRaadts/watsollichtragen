@@ -1,0 +1,14 @@
+<div *ngIf="showWeather" class="weather-container">
+    <button  class="btn" (click)="onClick()">Wat soll ich tragen?</button>
+</div>
+
+<div *ngIf="showWeather === false" class="result-container">
+    <!-- <p class="temperature">{{currentTemperatur}} Grad</p> -->
+    <p *ngIf="currentTemperatur <= 0" class="temperature">super kalt Grad</p>
+    <p *ngIf="currentTemperatur > 0 && currentTemperatur <= 7" class="temperature">Sehr kalt Grad</p>
+    <p *ngIf="currentTemperatur > 7 && currentTemperatur <= 12" class="temperature">mittel kalt</p>
+    <p *ngIf="currentTemperatur > 12 && currentTemperatur <= 17" class="temperature">moderat</p>
+    <p *ngIf="currentTemperatur > 17 && currentTemperatur <= 22" class="temperature">frühling</p>
+    <p *ngIf="currentTemperatur > 22 && currentTemperatur <= 28" class="temperature">sommmer</p>
+    <p *ngIf="currentTemperatur > 28" class="temperature">hoch sommmer</p>
+</div>
