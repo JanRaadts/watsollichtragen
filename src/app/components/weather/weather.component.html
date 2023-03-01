@@ -1,18 +1,26 @@
 <div *ngIf="showWeather" class="weather-container">
-    <button *ngIf="loading === false" class="btn" (click)="onClick()">Wat soll ich tragen?</button>
-    <div *ngIf="loading === true" class="btn">
-        <p>Loading...</p>
+    <button *ngIf="loading === false && locationInput === false" class="btn" (click)="onClick()">Wat soll ich tragen?</button>
+    <div *ngIf="locationInput" class="btn">
+        <form (ngSubmit)="onSubmit()" class="form">
+            <label for="city">Wo befindest du dich gerade?</label>
+            <input class="input" type="text" name="city" id="city" [(ngModel)]="city"  placeholder="Stadt">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <div *ngIf="loading === true"  >
+         <ng-lottie
+            [options]="options" 
+            (animationCreated)="onAnimate($event)">
+          </ng-lottie>
     </div>
 </div>
 
 <div *ngIf="showWeather === false" class="result-container">
-    <p *ngIf="currentTemperatur <= 0" class="temperature">super kalt Grad</p>
-    <p *ngIf="currentTemperatur > 0 && currentTemperatur <= 7" class="temperature">Sehr kalt Grad</p>
-    <p *ngIf="currentTemperatur > 7 && currentTemperatur <= 12" class="temperature">mittel kalt</p>
-    <p *ngIf="currentTemperatur > 12 && currentTemperatur <= 17" class="temperature">moderat</p>
-    <p *ngIf="currentTemperatur > 17 && currentTemperatur <= 22" class="temperature">frühling</p>
-    <p *ngIf="currentTemperatur > 22 && currentTemperatur <= 28" class="temperature">sommmer</p>
-    <p *ngIf="currentTemperatur > 28" class="temperature">hoch sommmer</p>
-    <br>
-    <p class="temperature">{{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur <= 0" class="temperature">Stay Home! Es sind fucking {{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur > 0 && currentTemperatur <= 7" class="temperature">Zieh dich warm an! Es sind {{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur > 7 && currentTemperatur <= 12" class="temperature">Brrr es ist kälter als man denkt! Es sind {{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur > 12 && currentTemperatur <= 17" class="temperature">Der Winter ist vorbei, geh raus bei {{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur > 17 && currentTemperatur <= 22" class="temperature">Zeit die Sommerklamotten auszupacken! Es sind {{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur > 22 && currentTemperatur <= 28" class="temperature">Ab in kurze Hosen und Birckenstocks! Es sind {{currentTemperatur}} Grad</p>
+    <p *ngIf="currentTemperatur > 28" class="temperature">Go naked! Verdammt heiße {{currentTemperatur}} Grad</p>
 </div>

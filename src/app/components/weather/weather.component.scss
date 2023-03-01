@@ -1,5 +1,6 @@
 .weather-container{
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), url("../../../assets/images/hand-drawn-seamless-pattern-related-weather-theme-sun-clouds-snowflakes-wind-rain-moon-lightning-doodle-sketch-vector-illustration-background-design_333145-414.jpg");
+    // background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), url("../../../assets/images/hand-drawn-seamless-pattern-related-weather-theme-sun-clouds-snowflakes-wind-rain-moon-lightning-doodle-sketch-vector-illustration-background-design_333145-414.jpg");
+   background-color: #173672;
     height: 100svh;
   width: 100vw;
   display: flex;
@@ -11,9 +12,9 @@
     height: 20vh;
     width: 40vh;
     font-size: 2.5rem;
-    color: white;   
+    color: #2E5194;;   
     border: none;
-    background: #70DBC1;
+    background: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     display: flex;
@@ -33,4 +34,21 @@
 
 .temperature{
     font-size: 3rem;
+    text-align: center;
+}
+
+.form{
+    font-size: 1rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+}
+
+.input{
+    width: 80%;
+    height: 40px;
+    margin: 5px;
+    font-size: 17px;
 }
