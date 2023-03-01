@@ -35,9 +35,7 @@ export class WeatherComponent {
 
     const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
       this.getLocation();
-  }, 1000);
-
-    // this.getLocation();
+  }, 2000);
   }
 
   getLocation(){
@@ -67,7 +65,6 @@ export class WeatherComponent {
 
   getTemperature(){
     this.currentTemperatur = this.data.current_weather.temperature
-    console.log(this.currentTemperatur)
   }
 
 
@@ -80,9 +77,6 @@ export class WeatherComponent {
   }
 
   getLatLon(){
-
-    console.log(this.coordinates)
-
     if (this.coordinates.features.length === 0) {
       alert(`Keinen Ort mit dem Namen gefunden`);
     } else {
@@ -101,7 +95,7 @@ export class WeatherComponent {
 
  // This is the component function that binds to the animationCreated event from the package  
  onAnimate(animationItem: AnimationItem): void {    
-  console.log(animationItem);  
+  // console.log(animationItem);  
 }
 
 }
