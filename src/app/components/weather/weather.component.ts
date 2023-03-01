@@ -31,8 +31,13 @@ export class WeatherComponent {
   constructor(){}
 
   onClick(){
-    this.loading = true
-    this.getLocation();
+    this.loading = true;
+
+    const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
+      this.getLocation();
+  }, 1000);
+
+    // this.getLocation();
   }
 
   getLocation(){
