@@ -24,7 +24,7 @@ export class WeatherComponent {
 
   // This is the option that uses the package's AnimationOption interface  
   options: AnimationOptions = {    
-    path: '../../assets/lottie/9793-thermometer.json'  
+    path: '../../assets/lottie/69847-pulsing-sun.json'  
   };  
 
 
