@@ -20,16 +20,12 @@ export class WeatherComponent {
   GEO_API: string = "e9e1604216e7465488692640e2190af5"
   geoUrl!: string 
 
-
-
-
   constructor(){
     this.onClick()
   }
 
   onClick(){
     this.loading = true;
-
     const timer: ReturnType<typeof setTimeout> = setTimeout(() => {
       this.getLocation();
   }, 2000);
@@ -63,8 +59,13 @@ export class WeatherComponent {
     this.currentTemperatur = this.data.current_weather.temperature
   }
 
+  addCity(event:any){
+    this.geoUrl = event
+    this.getGeo()
+    console.log(event)
+   }
 
-    getGeo() {
+  getGeo() {
       fetch(this.geoUrl).then((response) => response.json())
       .then((quotesData) => {this.coordinates = quotesData; this.getLatLon()});
   }
@@ -80,10 +81,6 @@ export class WeatherComponent {
     }
   }
 
- addCity(event:any){
-  this.geoUrl = event
-  this.getGeo()
-  console.log(event)
- }
+
 
 }
