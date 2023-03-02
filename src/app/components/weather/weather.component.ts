@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AnimationItem } from 'lottie-web';
-import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-weather',
@@ -22,13 +20,12 @@ export class WeatherComponent {
   GEO_API: string = "e9e1604216e7465488692640e2190af5"
   geoUrl!: string 
 
-  // This is the option that uses the package's AnimationOption interface  
-  options: AnimationOptions = {    
-    path: '../../assets/lottie/69847-pulsing-sun.json'  
-  };  
 
 
-  constructor(){}
+
+  constructor(){
+    this.onClick()
+  }
 
   onClick(){
     this.loading = true;
@@ -47,7 +44,6 @@ export class WeatherComponent {
     };
     
     const errorCallback = () => {
-      alert("standort nicht gefunden")
       this.loading = false
       this.locationInput = true
     };
@@ -69,11 +65,8 @@ export class WeatherComponent {
 
 
     getGeo() {
-      this.geoUrl = `https://api.geoapify.com/v1/geocode/search?text=${this.city}&apiKey=e5002b4ebd9540a481613abeccde07c7`
       fetch(this.geoUrl).then((response) => response.json())
       .then((quotesData) => {this.coordinates = quotesData; this.getLatLon()});
-
-  
   }
 
   getLatLon(){
@@ -87,15 +80,10 @@ export class WeatherComponent {
     }
   }
 
- onSubmit(){
-  this.geoUrl = `https://api.geoapify.com/v1/geocode/search?text=${this.city}&apiKey=e5002b4ebd9540a481613abeccde07c7`
+ addCity(event:any){
+  this.geoUrl = event
   this.getGeo()
-  this.city = ""
+  console.log(event)
  }
-
- // This is the component function that binds to the animationCreated event from the package  
- onAnimate(animationItem: AnimationItem): void {    
-  // console.log(animationItem);  
-}
 
 }
