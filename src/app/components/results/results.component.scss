@@ -1,0 +1,23 @@
+.result-container{
+    height: 100svh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #36435A;
+}
+
+.temperature{
+  font-size: 4rem;
+  font-weight: lighter;
+  text-align: center;
+  color: white;
+  width: 80vw;
+  hyphens: auto;
+  overflow: auto;
+  strong{
+      hyphens: auto;
+  }
+  
+}

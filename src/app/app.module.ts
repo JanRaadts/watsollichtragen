@@ -8,9 +8,10 @@ import player from 'lottie-web';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherComponent } from './components/weather/weather.component';
+
 import { LoadingscreenComponent } from './components/loadingscreen/loadingscreen.component';
 import { CityFormComponent } from './components/city-form/city-form.component';
+import { ResultsComponent } from './components/results/results.component';
 
 export function playerFactory(): any {  
   return import('lottie-web');
@@ -19,9 +20,9 @@ export function playerFactory(): any {
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent,
     LoadingscreenComponent,
-    CityFormComponent
+    CityFormComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

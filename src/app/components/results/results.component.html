@@ -1,7 +1,4 @@
-<app-city-form *ngIf="locationInput && showWeather" (searchedCity)="addCity($event)"></app-city-form>
-<app-loadingscreen *ngIf="loading === true"></app-loadingscreen>
-
-<div *ngIf="showWeather === false" class="result-container">
+<div *ngIf="showResults === true" class="result-container">
     <p *ngIf="currentTemperatur <= 0" class="temperature"><strong>Stay Home!</strong> Es sind fucking <strong>{{currentTemperatur}} Grad</strong></p>
     <p *ngIf="currentTemperatur > 0 && currentTemperatur <= 7" class="temperature"><strong>Zieh</strong> dich <strong>warm an</strong>! Es sind <strong>{{currentTemperatur}} Grad</strong></p>
     <p *ngIf="currentTemperatur > 7 && currentTemperatur <= 12" class="temperature"><strong>Brrr</strong> es ist <strong>kälter</strong> als man denkt! Es sind <strong>{{currentTemperatur}} Grad</strong></p>

@@ -1,1 +1,3 @@
-<app-weather></app-weather>
+<app-city-form *ngIf="locationInput && showResults === false"></app-city-form>
+<app-loadingscreen *ngIf="loading === true"></app-loadingscreen>
+<app-results></app-results>
